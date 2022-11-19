@@ -17,6 +17,9 @@
 import numpy as np
 
 # %%
+import matplotlib.pyplot as plt
+
+# %%
 my_arr = np.arange(1_000_000)
 
 # %%
@@ -215,3 +218,15 @@ data = rng.standard_normal((2,3))
 data
 
 # %%
+#-------------------------
+
+# %%
+points = np.arange(-5,5,0.01)
+xs, ys =  np.meshgrid(points,points)
+z = np.sqrt(xs ** 2 + ys ** 2)
+
+# %%
+plt.imshow(z,cmap=plt.cm.Blues, extent=[-5,5,-5,5]), plt.colorbar()
+
+# %%
+plt.cm.
