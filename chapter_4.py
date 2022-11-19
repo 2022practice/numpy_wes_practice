@@ -20,6 +20,9 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 # %%
+from numpy.linalg import inv, qr
+
+# %%
 my_arr = np.arange(1_000_000)
 
 # %%
@@ -226,7 +229,29 @@ xs, ys =  np.meshgrid(points,points)
 z = np.sqrt(xs ** 2 + ys ** 2)
 
 # %%
-plt.imshow(z,cmap=plt.cm.Blues, extent=[-5,5,-5,5]), plt.colorbar()
+plt.imshow(z,cmap=plt.cm.Blues, extent=[-5,5,-5,5]), plt.colorbar(), plt.title('image plot of $\sqrt{x² + y²}$ for a grid of values')
 
 # %%
-plt.cm.
+#------------------
+
+# %%
+xar = np.array([1.1,1.2,1.3,1.4,1.5])
+yar = np.array([2.1,2.2,2.3,2.4,2.5])
+cond = np.array([True, False,True,True,False])
+
+# %%
+result = np.where(cond,xar,yar)
+result
+
+# %%
+# para reemplazar todos los valores negativos de una matriz,en este caso, esta buenisimo esto
+
+
+# %% tags=[]
+arr = rng.standard_normal((4,4))
+arr, arr >0, np.where(arr > 0, 2, -2)
+
+# %%
+#--------------------------
+
+# %%
